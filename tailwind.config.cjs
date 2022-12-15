@@ -6,12 +6,14 @@ module.exports = {
       colors: {
         primaryColor: "#FB5533",
         secondaryColor: "#C4001D",
+
         textColor: "#000000",
         secondaryTextColor: "#616161",
-        primaryBgColor: "#FFFFFF",
-        dividerColor: "#e0e0e0",
 
-        greenBg: "#00c853",
+        primaryBgColor: "#FFFFFF",
+        secondaryBgColor: "#e0e0e0",
+
+        dividerColor: "#e0e0e0",
       },
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
