@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton } from '@mui/material';
-import { Search } from '@mui/icons-material';
+import { Search, Settings } from '@mui/icons-material';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { MonetizationOn } from '@mui/icons-material';
@@ -25,6 +25,17 @@ import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+
+import BluetoothEarbuds from './assets/images/TopProducts/bluetooth-earbuds.jpg';
+import StainlessSteelTumbler from './assets/images/TopProducts/tumbler.jpg';
+import Sandals from './assets/images/TopProducts/sandals.jpg';
+import PoloForMen from './assets/images/TopProducts/polo.jpg';
+import KoreanRubberShoe from './assets/images/TopProducts/rubber-shoes.jpg';
+import BluetoothEarphone from './assets/images/TopProducts/bluetooth-earphones.jpg';
+import SleeveDress from './assets/images/TopProducts/sleeve-dress.jpg';
+import WaterBottle from './assets/images/TopProducts/water-bottle.jpg';
+import SpinningPen from './assets/images/TopProducts/spinning-pen.jpg';
+import SofaCover from './assets/images/TopProducts/elastic-sofa-cover.jpg';
 
 function TopAppBar() {
   return (
@@ -88,22 +99,35 @@ function AppBody() {
     "ShopeePay Near Me"     
   ]
 
+  const TopProducts = [
+    {name: "TWS Bluethoot Earbuds", img: BluetoothEarbuds}, {name: "Stainless Steel Tumbler", img: StainlessSteelTumbler}, 
+    {name: "Sandals With Heels", img: Sandals}, {name: "Polo For Men", img: PoloForMen}, 
+    {name: "Korean Rubber Shoe", img: KoreanRubberShoe}, {name: "Bluethooth Earphone", img: BluetoothEarphone},
+    {name: "Women's Puff Sleeve Dress", img: SleeveDress}, {name: "Water Bottle", img: WaterBottle}, 
+    {name: "Spinning Pen", img: SpinningPen}, {name: "Elastic Sofa Cover", img: SofaCover},
+  ]
+
   const [openFeatures, setOpenFeatures] = React.useState(true);
 
   const handleFeatures = () => {
-    setOpenFeatures(!openFeatures);
-  };
+    setOpenFeatures(!openFeatures)
+  }
 
+  const [openCategories, setOpenCategories] = React.useState(true);
+
+  const handleCategories = () => {
+    setOpenCategories(!openCategories)
+  }
 
   return (
     <div className="h-full w-full flex">
-      <section className="w-[220px] ml-2 mr-2 overflow-y-auto">
+      <section className="w-[280px] ml-2 mr-2 overflow-y-auto">
         <List
           sx={{ width: '100%', maxWidth: 320, bgcolor: 'background.paper' }}
           component="nav"
         >
           <ListItemButton onClick={handleFeatures} sx={{margin: 1, borderRadius: 2}}>
-            <ListItemText primary="Features" />
+            <ListItemText primary="Features" sx={{color: "#FB5533"}} />
             {openFeatures ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
 
@@ -123,14 +147,60 @@ function AppBody() {
               }
             </List>
           </Collapse>
+
+          <ListItemButton onClick={handleCategories} sx={{margin: 1, borderRadius: 2}}>
+              <ListItemText primary="Categories" sx={{color: "#FB5533"}} />
+              {openCategories ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+
+          <Collapse in={openCategories} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+            {
+                Categories.map((data, i) => {
+                  return (
+                    <ListItemButton sx={{margin: 1, borderRadius: 2}}>
+                      <ListItemText primary={data} />
+                    </ListItemButton>
+                  )
+                })
+              }
+            </List>
+          </Collapse>
         </List>
       </section>
 
-      <section className="flex justify-center items-start mr-4 mt-4">
-        <img src={SaluSalo} className="mr-4 rounded-2xl" />
-        <div>
-          <img src={BigSale} className="mb-4 rounded-2xl" />
-          <img src={ShopeeBeauty} className="rounded-2xl" />
+      <section className="mr-4 mt-4">
+        <div className="flex justify-center items-start ">
+          <img src={SaluSalo} className="mr-4 rounded-2xl" />
+          <div>
+            <img src={BigSale} className="mb-4 rounded-2xl" />
+            <img src={ShopeeBeauty} className="rounded-2xl" />
+          </div>
+        </div>
+        <div className="mt-8 ml-4 mr-4">
+          <h2 className="text-center font-Poppins text-2xl tracking-wide text-primaryColor mb-4">
+              Top Products
+          </h2>
+          <div className="grid grid-cols-5">
+              {
+                TopProducts.map((data, i) => {
+                  return (
+                    <div className="mb-4 mr-4 ml-4 p-2 border-[1px] border-dividerColor 
+                      rounded-md shadow-md bg-secondaryBgColor cursor-pointer
+                      hover:border-2 hover:border-primaryColor hover:shadow-lg
+                      transition-all duration-200 ease-linear">
+                      <div className="flex justify-center">
+                        <img src={data.img} />
+                      </div>
+                      <div className="text-center mt-2 font-Poppins 
+                        font-semibold text-base">
+                        {data.name}
+                      </div>  
+                    </div>
+                  )
+                })
+              }
+          </div>
         </div>
       </section>
     </div>
