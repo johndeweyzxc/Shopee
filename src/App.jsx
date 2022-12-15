@@ -3,11 +3,28 @@ import { IconButton } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
+import { MonetizationOn } from '@mui/icons-material';
+import { LocalShipping } from '@mui/icons-material';
+import { Storefront } from '@mui/icons-material';
+import { ConfirmationNumber } from '@mui/icons-material';
+import { AttachMoney } from '@mui/icons-material';
+import { Store } from '@mui/icons-material';
+import { Public } from '@mui/icons-material';
+import { DevicesOther } from '@mui/icons-material';
+import { Loyalty } from '@mui/icons-material';
+import { Token } from '@mui/icons-material';
 
 import BigSale from './assets/images/big-christmas-sale.jpg';
 import SaluSalo from './assets/images/pinoy-salu-salo.jpg';
 import ShopeeBeauty from './assets/images/shopee-beauty.jpg';
+
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Collapse from '@mui/material/Collapse';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 function TopAppBar() {
   return (
@@ -53,10 +70,12 @@ function AppBody() {
     {productTitle: "R&O Korean Sling shoulder", price: "₱85", numberOfSold: "5.6K"},
   ]
 
-  const ShortcutList = [
-    "Coin Rewards", "Free Shipping", "Shopee Mall", "Vouchers",
-    "1 ₱ Deals", "Shopee Supermarket", "Global Deals",
-    "Gadget Zone", "Shopee Loyalty", "All Promos"
+  const FeatureList = [
+    {name: "Coin Rewards", img: <MonetizationOn/>}, {name: "Free Shipping", img:  <LocalShipping/>}, 
+    {name: "Shopee Mall", img: <Storefront/>}, {name: "Vouchers", img: <ConfirmationNumber/>},
+    {name: "1 ₱ Deals", img: <AttachMoney/>}, {name: "Shopee Supermarket", img: <Store/>}, 
+    {name: "Global Deals", img: <Public/>}, {name: "Gadget Zone", img: <DevicesOther/>}, 
+    {name: "Shopee Loyalty", img: <Loyalty/>}, {name: "All Promos", img: <Token/>},
   ]
 
   const Categories = [
@@ -69,10 +88,51 @@ function AppBody() {
     "ShopeePay Near Me"     
   ]
 
+  const [openFeatures, setOpenFeatures] = React.useState(true);
+
+  const handleFeatures = () => {
+    setOpenFeatures(!openFeatures);
+  };
+
+
   return (
-    <div className="h-full w-full m-4">
-      <div>
-      </div>
+    <div className="h-full w-full flex">
+      <section className="w-[220px] ml-2 mr-2 overflow-y-auto">
+        <List
+          sx={{ width: '100%', maxWidth: 320, bgcolor: 'background.paper' }}
+          component="nav"
+        >
+          <ListItemButton onClick={handleFeatures} sx={{margin: 1, borderRadius: 2}}>
+            <ListItemText primary="Features" />
+            {openFeatures ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+
+          <Collapse in={openFeatures} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {
+                FeatureList.map((data, i) => {
+                  return (
+                    <ListItemButton sx={{margin: 1, borderRadius: 2}}>
+                      <ListItemIcon>
+                        {data.img}
+                      </ListItemIcon>
+                      <ListItemText primary={data.name} />
+                    </ListItemButton>
+                  )
+                })
+              }
+            </List>
+          </Collapse>
+        </List>
+      </section>
+
+      <section className="flex justify-center items-start mr-4 mt-4">
+        <img src={SaluSalo} className="mr-4 rounded-2xl" />
+        <div>
+          <img src={BigSale} className="mb-4 rounded-2xl" />
+          <img src={ShopeeBeauty} className="rounded-2xl" />
+        </div>
+      </section>
     </div>
   )
 }
@@ -86,7 +146,8 @@ function App() {
 
   const SuggestionChips = () => {
     return (
-      <div className="pl-4 pr-4 pt-2 pb-2 flex justify-center">
+      <div className="pl-4 pr-4 pt-2 pb-2 flex justify-center border-b-[1px] border-dividerColor
+        shadow-md">
       <Stack direction="row" spacing={1}>
         {SampleChipData.map((data, i) => {
           return <Chip key={i} label={data} variant="outlined" clickable />
@@ -100,7 +161,6 @@ function App() {
     <div className="w-screen h-auto">
       <TopAppBar />
       <SuggestionChips />
-      <Divider />
       <AppBody />
     </div>
   )
