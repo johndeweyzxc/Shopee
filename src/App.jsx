@@ -14,6 +14,7 @@ import {Public} from "@mui/icons-material";
 import {DevicesOther} from "@mui/icons-material";
 import {Loyalty} from "@mui/icons-material";
 import {Token} from "@mui/icons-material";
+import {ShoppingCart} from "@mui/icons-material";
 
 import BigSale from "./assets/images/big-christmas-sale.jpg";
 import SaluSalo from "./assets/images/pinoy-salu-salo.jpg";
@@ -38,48 +39,54 @@ import WaterBottle from "./assets/images/TopProducts/water-bottle.jpg";
 import SpinningPen from "./assets/images/TopProducts/spinning-pen.jpg";
 import SofaCover from "./assets/images/TopProducts/elastic-sofa-cover.jpg";
 
+import DailyDiscover1 from "./assets/images/DailyDiscover/daily-discover-1.jpg";
+import {BottomBar} from "./Login";
+
 function TopAppBar() {
   const navigate = useNavigate();
 
   return (
     <header className='w-full bg-primaryColor p-4 pl-6 pr-6'>
       <section className='flex'>
-        <h1 className='text-2xl text-white font-Poppins font-semibold mr-8'>
+        <h1 className='text-3xl text-white font-Poppins font-semibold mr-8 self-center'>
           Shopee
         </h1>
         <div className='flex bg-white p-2 rounded-full w-full'>
           <input
             placeholder='Sign up and get 100% off on your first order'
-            className='text-base text-textColor font-Poppins outline-none pl-2 pr-2 w-full
+            className='text-base text-textColor font-Roboto outline-none pl-2 pr-2 w-full
             placeholder:font-Roboto placeholder:text-sm'
           />
           <IconButton sx={{padding: 0}}>
             <Search />
           </IconButton>
         </div>
-        <div className='w-full flex items-center ml-4'>
-          <div className='text-white font-Poppins text-xs p-2 cursor-pointer mr-[1px]'>
+        <div className='w-full flex items-center ml-4 font-Poppins'>
+          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
             Sell on Shopee
           </div>
-          <div className='text-white font-Poppins text-xs p-2 cursor-pointer mr-[1px]'>
+          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
             Seller Center
           </div>
-          <div className='text-white font-Poppins text-xs p-2 cursor-pointer mr-[1px]'>
+          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
             Download
           </div>
-          <div className='text-white font-Poppins text-xs p-2 cursor-pointer mr-[1px]'>
+          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
             Help
           </div>
         </div>
-        <div className='flex'>
+        <div className='flex font-Poppins'>
+          <div className='self-center mr-8 cursor-pointer'>
+            <ShoppingCart sx={{color: "#FFFF"}} />
+          </div>
           <div
-            className='text-white font-Poppins text-lg font-semibold p-2 cursor-pointer mr-4'
+            className='text-white text-lg font-semibold p-2 cursor-pointer mr-4'
             onClick={() => navigate("register")}
           >
             Register
           </div>
           <div
-            className='text-white font-Poppins text-lg font-semibold p-2 cursor-pointer mr-4'
+            className='text-white text-lg font-semibold p-2 cursor-pointer mr-4'
             onClick={() => navigate("login")}
           >
             Login
@@ -108,7 +115,7 @@ function AppBody() {
       numberOfSold: "4.5K",
     },
     {
-      prouctTitle: "Lucky Attack on Titan Premium",
+      productTitle: "Lucky Attack on Titan Premium",
       price: "₱89",
       numberOfSold: "1.9K",
     },
@@ -198,8 +205,9 @@ function AppBody() {
   };
 
   return (
-    <div className='h-full w-full flex'>
-      <section className='w-[280px] ml-2 mr-2 overflow-y-auto'>
+    <div className='h-full w-full flex border-b-2 border-primaryColor'>
+      {/* Side Navigation */}
+      <section className='w-[280px] ml-2 mr-2 overflow-y-auto border-r-[1px] border-dividerColor'>
         <List
           sx={{width: "100%", maxWidth: 320, bgcolor: "background.paper"}}
           component='nav'
@@ -247,42 +255,76 @@ function AppBody() {
         </List>
       </section>
 
-      <section className='mr-4 mt-4'>
-        <div className='flex justify-center items-start '>
+      {/* Main Content */}
+      <div className='mr-4 mt-4'>
+        <section className='flex justify-center items-start '>
           <img src={SaluSalo} className='mr-4 rounded-2xl' />
           <div>
             <img src={BigSale} className='mb-4 rounded-2xl' />
             <img src={ShopeeBeauty} className='rounded-2xl' />
           </div>
-        </div>
+        </section>
+
+        {/* Top Products */}
         <div className='mt-8 ml-4 mr-4'>
           <h2 className='text-center font-Poppins text-2xl tracking-wide text-primaryColor mb-4'>
             Top Products
           </h2>
-          <div className='grid grid-cols-5'>
+          <section className='grid grid-cols-5'>
             {TopProducts.map((data, i) => {
               return (
                 <div
                   className='mb-4 mr-4 ml-4 p-2 border-[1px] border-dividerColor 
-                      rounded-md shadow-md bg-secondaryBgColor cursor-pointer
-                      hover:border-2 hover:border-primaryColor hover:shadow-lg
-                      transition-all duration-200 ease-linear'
+                      rounded-md shadow-md cursor-pointer hover:border-primaryColor 
+                      hover:shadow-lg transition-all duration-200 ease-in-out 
+                      font-Roboto'
                 >
                   <div className='flex justify-center'>
-                    <img src={data.img} />
+                    <img src={data.img} className='rounded-lg' />
                   </div>
-                  <div
-                    className='text-center mt-2 font-Poppins 
-                        font-semibold text-base'
-                  >
+                  <div className='text-center mt-4 font-semibold text-base'>
                     {data.name}
                   </div>
                 </div>
               );
             })}
-          </div>
+          </section>
         </div>
-      </section>
+
+        {/* Daily Discover */}
+        <section className='mr-4 mt-4'>
+          <h2 className='text-center font-Poppins text-2xl tracking-wide text-primaryColor mb-4'>
+            Daily Discover
+          </h2>
+          <div className='grid grid-cols-5'>
+            {ItemsForSale.map((data, i) => {
+              return (
+                <div
+                  className='mb-4 mr-4 ml-4 p-2 border-[1px] border-dividerColor 
+                  rounded-md shadow-md cursor-pointer hover:border-primaryColor 
+                  hover:shadow-lg transition-all duration-200 ease-in-out 
+                  font-Roboto'
+                >
+                  <div className='flex justify-center'>
+                    <img src={DailyDiscover1} className='rounded-lg' />
+                  </div>
+                  <div className='text-center mt-2 font-semibold text-base'>
+                    {data.productTitle}
+                  </div>
+                  <div className='flex justify-between mt-4'>
+                    <div className='text-primaryColor text-semibold'>
+                      {data.price}
+                    </div>
+                    <div className='text-xs text-secondaryTextColor'>
+                      {data.numberOfSold} sold
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
@@ -304,7 +346,7 @@ function App() {
     return (
       <div
         className='pl-4 pr-4 pt-2 pb-2 flex justify-center border-b-[1px] border-dividerColor
-        shadow-md'
+        font-Roboto'
       >
         <Stack direction='row' spacing={1}>
           {SampleChipData.map((data, i) => {
@@ -320,6 +362,7 @@ function App() {
       <TopAppBar />
       <SuggestionChips />
       <AppBody />
+      <BottomBar />
     </div>
   );
 }
