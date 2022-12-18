@@ -38,8 +38,15 @@ import WaterBottle from "./assets/images/TopProducts/water-bottle.jpg";
 import SpinningPen from "./assets/images/TopProducts/spinning-pen.jpg";
 import SofaCover from "./assets/images/TopProducts/elastic-sofa-cover.jpg";
 
-import DailyDiscover1 from "./assets/images/DailyDiscover/daily-discover-1.jpg";
 import {BottomBar} from "./Login";
+import DailyDiscover1 from "./assets/images/DailyDiscover/daily-discover-1.jpg";
+import DailyDiscover2 from "./assets/images/DailyDiscover/daily-discover-2.jpg";
+import DailyDiscover3 from "./assets/images/DailyDiscover/daily-discover-3.jpg";
+import DailyDiscover4 from "./assets/images/DailyDiscover/daily-discover-4.jpg";
+import DailyDiscover5 from "./assets/images/DailyDiscover/daily-discover-6.jpg";
+import DailyDiscover6 from "./assets/images/DailyDiscover/daily-discover-5.jpg";
+import DailyDiscover7 from "./assets/images/DailyDiscover/daily-discover-7.jpg";
+import DailyDiscover8 from "./assets/images/DailyDiscover/daily-discover-8.jpg";
 
 export function TopAppBar() {
   return (
@@ -100,37 +107,49 @@ function AppBody() {
       productTitle: "fashion mini backpack for women",
       price: "₱100",
       numberOfSold: "10.9K",
+      img: DailyDiscover1,
     },
     {
       productTitle: "Unisex Cotton jogger pants",
       price: "₱98",
       numberOfSold: "7.6K",
+      img: DailyDiscover2,
     },
     {
       productTitle: "Womens Summer Slippers",
       price: "₱78",
       numberOfSold: "4.5K",
+      img: DailyDiscover3,
     },
     {
       productTitle: "Lucky Attack on Titan Premium",
       price: "₱89",
       numberOfSold: "1.9K",
+      img: DailyDiscover4,
     },
-    {productTitle: "Bumper Phone Case", price: "₱61", numberOfSold: "18.7K"},
+    {
+      productTitle: "Bumper Phone Case",
+      price: "₱61",
+      numberOfSold: "18.7K",
+      img: DailyDiscover5,
+    },
     {
       productTitle: "South Korean high rubber shoes",
       price: "₱92",
       numberOfSold: "2.9K",
+      img: DailyDiscover6,
     },
     {
       productTitle: "5 Packs of Piattos (40g)",
       price: "₱83",
       numberOfSold: "2.5K",
+      img: DailyDiscover7,
     },
     {
       productTitle: "R&O Korean Sling shoulder",
       price: "₱85",
       numberOfSold: "5.6K",
+      img: DailyDiscover8,
     },
   ];
 
@@ -258,11 +277,11 @@ function AppBody() {
 
       {/* Main Content */}
       <div className='mr-4 mt-4'>
-        <section className='flex justify-center items-start '>
-          <img src={SaluSalo} className='mr-4 rounded-2xl' />
-          <div>
-            <img src={BigSale} className='mb-4 rounded-2xl' />
-            <img src={ShopeeBeauty} className='rounded-2xl' />
+        <section className='flex flex-col justify-center'>
+          <img src={SaluSalo} className='ml-8 mr-8 rounded-2xl' />
+          <div className='flex justify-around mt-8 items-center'>
+            <img src={BigSale} className='rounded-2xl h-34' />
+            <img src={ShopeeBeauty} className='rounded-2xl h-34' />
           </div>
         </section>
 
@@ -307,7 +326,7 @@ function AppBody() {
                   href='/dailydiscover'
                 >
                   <div className='flex justify-center'>
-                    <img src={DailyDiscover1} className='rounded-lg' />
+                    <img src={data.img} className='rounded-lg' />
                   </div>
                   <div className='text-center mt-2 text-base '>
                     {data.productTitle}
