@@ -1,5 +1,4 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
 import {IconButton} from "@mui/material";
 import {Search} from "@mui/icons-material";
 import Chip from "@mui/material/Chip";
@@ -42,13 +41,11 @@ import SofaCover from "./assets/images/TopProducts/elastic-sofa-cover.jpg";
 import DailyDiscover1 from "./assets/images/DailyDiscover/daily-discover-1.jpg";
 import {BottomBar} from "./Login";
 
-function TopAppBar() {
-  const navigate = useNavigate();
-
+export function TopAppBar() {
   return (
     <header className='w-full bg-primaryColor p-4 pl-6 pr-6'>
       <section className='flex'>
-        <h1 className='text-3xl text-white font-Poppins font-semibold mr-8 self-center'>
+        <h1 className='text-3xl text-white font-Poppins mr-8 self-center'>
           Shopee
         </h1>
         <div className='flex bg-white p-2 rounded-full w-full'>
@@ -61,36 +58,36 @@ function TopAppBar() {
             <Search />
           </IconButton>
         </div>
-        <div className='w-full flex items-center ml-4 font-Poppins'>
-          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
+        <div className='w-full flex items-center ml-4 font-OpenSans text-white text-sm'>
+          <a className='p-2 cursor-pointer mr-[1px]' href='/sellonshopee'>
             Sell on Shopee
-          </div>
-          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
+          </a>
+          <a className='p-2 cursor-pointer mr-[1px]' href='/sellercenter'>
             Seller Center
-          </div>
-          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
+          </a>
+          <a className='p-2 cursor-pointer mr-[1px]' href='/download'>
             Download
-          </div>
-          <div className='text-white text-xs p-2 cursor-pointer mr-[1px]'>
+          </a>
+          <a className='p-2 cursor-pointer mr-[1px]' href='/help'>
             Help
-          </div>
+          </a>
         </div>
         <div className='flex font-Poppins'>
           <div className='self-center mr-8 cursor-pointer'>
             <ShoppingCart sx={{color: "#FFFF"}} />
           </div>
-          <div
-            className='text-white text-lg font-semibold p-2 cursor-pointer mr-4'
-            onClick={() => navigate("register")}
+          <a
+            className='text-white text-lg p-2 cursor-pointer mr-4'
+            href='/register'
           >
             Register
-          </div>
-          <div
-            className='text-white text-lg font-semibold p-2 cursor-pointer mr-4'
-            onClick={() => navigate("login")}
+          </a>
+          <a
+            className='text-white text-lg p-2 cursor-pointer mr-4'
+            href='/login'
           >
             Login
-          </div>
+          </a>
         </div>
       </section>
     </header>
@@ -180,16 +177,20 @@ function AppBody() {
   ];
 
   const TopProducts = [
-    {name: "TWS Bluethoot Earbuds", img: BluetoothEarbuds},
-    {name: "Stainless Steel Tumbler", img: StainlessSteelTumbler},
-    {name: "Sandals With Heels", img: Sandals},
-    {name: "Polo For Men", img: PoloForMen},
-    {name: "Korean Rubber Shoe", img: KoreanRubberShoe},
-    {name: "Bluethooth Earphone", img: BluetoothEarphone},
-    {name: "Women's Puff Sleeve Dress", img: SleeveDress},
-    {name: "Water Bottle", img: WaterBottle},
-    {name: "Spinning Pen", img: SpinningPen},
-    {name: "Elastic Sofa Cover", img: SofaCover},
+    {name: "TWS Bluethoot Earbuds", img: BluetoothEarbuds, sales: "110k+"},
+    {
+      name: "Stainless Steel Tumbler",
+      img: StainlessSteelTumbler,
+      sales: "69K+",
+    },
+    {name: "Sandals With Heels", img: Sandals, sales: "83K+"},
+    {name: "Polo For Men", img: PoloForMen, sales: "94K+"},
+    {name: "Korean Rubber Shoe", img: KoreanRubberShoe, sales: "79K+"},
+    {name: "Bluethooth Earphone", img: BluetoothEarphone, sales: "103K+"},
+    {name: "Women's Puff Sleeve Dress", img: SleeveDress, sales: "91K+"},
+    {name: "Water Bottle", img: WaterBottle, sales: "130K+"},
+    {name: "Spinning Pen", img: SpinningPen, sales: "106K+"},
+    {name: "Elastic Sofa Cover", img: SofaCover, sales: "70K+"},
   ];
 
   const [openFeatures, setOpenFeatures] = React.useState(true);
@@ -273,19 +274,18 @@ function AppBody() {
           <section className='grid grid-cols-5'>
             {TopProducts.map((data, i) => {
               return (
-                <div
+                <a
                   className='mb-4 mr-4 ml-4 p-2 border-[1px] border-dividerColor 
                       rounded-md shadow-md cursor-pointer hover:border-primaryColor 
                       hover:shadow-lg transition-all duration-200 ease-in-out 
                       font-Roboto'
+                  href='/topproduct'
                 >
                   <div className='flex justify-center'>
                     <img src={data.img} className='rounded-lg' />
                   </div>
-                  <div className='text-center mt-4 font-semibold text-base'>
-                    {data.name}
-                  </div>
-                </div>
+                  <div className='text-center mt-4 text-sm'>{data.name}</div>
+                </a>
               );
             })}
           </section>
@@ -299,27 +299,28 @@ function AppBody() {
           <div className='grid grid-cols-5'>
             {ItemsForSale.map((data, i) => {
               return (
-                <div
+                <a
                   className='mb-4 mr-4 ml-4 p-2 border-[1px] border-dividerColor 
                   rounded-md shadow-md cursor-pointer hover:border-primaryColor 
                   hover:shadow-lg transition-all duration-200 ease-in-out 
-                  font-Roboto'
+                  font-Roboto flex flex-col justify-between'
+                  href='/dailydiscover'
                 >
                   <div className='flex justify-center'>
                     <img src={DailyDiscover1} className='rounded-lg' />
                   </div>
-                  <div className='text-center mt-2 font-semibold text-base'>
+                  <div className='text-center mt-2 text-base '>
                     {data.productTitle}
                   </div>
                   <div className='flex justify-between mt-4'>
-                    <div className='text-primaryColor text-semibold'>
+                    <div className='text-primaryColor text-sm'>
                       {data.price}
                     </div>
-                    <div className='text-xs text-secondaryTextColor'>
+                    <div className='text-xs text-secondaryTextColor self-center'>
                       {data.numberOfSold} sold
                     </div>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>
@@ -329,7 +330,7 @@ function AppBody() {
   );
 }
 
-function App() {
+export function App() {
   const SampleChipData = [
     "Shoes for Men",
     "Dress",
@@ -357,6 +358,7 @@ function App() {
     );
   };
 
+  document.title = "Shopee";
   return (
     <div className='w-screen h-auto'>
       <TopAppBar />
@@ -366,5 +368,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

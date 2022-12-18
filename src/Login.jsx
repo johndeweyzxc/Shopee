@@ -23,11 +23,14 @@ import AppGallery from "./assets/images/ShopeeAppDL/app-gallery.jpg";
 
 export function TopAppBar() {
   return (
-    <header className='w-full bg-primaryBgColor p-4 pl-6 pr-6 flex justify-between ml-12'>
+    <header className='w-full bg-primaryBgColor p-4 pl-6 pr-6 flex justify-between ml-12 font-Roboto'>
       <img src={ShopeeHeader} />
-      <div className='text-primaryColor cursor-pointer mr-20 flex justify-center items-center'>
+      <a
+        className='text-primaryColor cursor-pointer mr-20 flex justify-center items-center'
+        href='/needhelp'
+      >
         Need help?
-      </div>
+      </a>
     </header>
   );
 }
@@ -42,7 +45,7 @@ function AppBody() {
 
   return (
     <div className='w-full bg-primaryColor flex pt-16 pb-16 justify-center'>
-      <div className='flex flex-col justify-center mr-16 ml-16'>
+      <div className='flex flex-col justify-center mr-16 ml-16 font-Poppins'>
         <img src={ShopeeBig} className='h-60 self-center mb-8' />
         <h2 className='text-white text-3xl text-Poppins text-center mb-4'>
           The leading online shopping platform
@@ -52,10 +55,8 @@ function AppBody() {
         </h2>
       </div>
 
-      <div className='rounded-md bg-white p-8 mr-16 ml-16'>
-        <h2 className='mb-6 text-xl font-Poppins tracking-wide font-semibold'>
-          Login
-        </h2>
+      <div className='rounded-md bg-primaryBgColor p-8 mr-16 ml-16'>
+        <h2 className='mb-6 text-xl font-Poppins'>Login</h2>
 
         <div className='flex flex-col w-80'>
           <div className='mb-4 font-Roboto'>
@@ -91,17 +92,17 @@ function AppBody() {
               style={{backgroundColor: "#FB5533"}}
               sx={{width: 1}}
             >
-              <div className='font-Poppins text-base mt-1 mb-1 tracking-widest font-bold'>
+              <div className='font-OpenSans font-medium text-base mt-1 mb-1 tracking-wide'>
                 LOGIN
               </div>
             </Button>
           </div>
 
           <div className='flex justify-between mb-6 font-Roboto'>
-            <a href='#' className='text-sm text-blue-500'>
+            <a href='/forgotpassword' className='text-sm text-blue-500'>
               Forgot Password
             </a>
-            <a href='#' className='text-sm text-blue-500'>
+            <a href='/loginwithphonenumber' className='text-sm text-blue-500'>
               Login with phone number
             </a>
           </div>
@@ -121,10 +122,13 @@ function AppBody() {
                 shadow-sm hover:shadow-md hover:border-primaryColor
                 transition-all ease-out duration-200 mr-2'
             >
-              <img src={FacebookIcon} className='h-8 mr-2' />
-              <div className='font-Poppins text-sm tracking-wide font-semibold'>
+              <a
+                className='font-OpenSans font-medium text-sm tracking-wide flex items-center'
+                href='/facebook'
+              >
+                <img src={FacebookIcon} className='h-8 mr-2' />
                 Facebook
-              </div>
+              </a>
             </div>
             <div
               className='flex justify-center items-center p-2 border-[1px] 
@@ -132,19 +136,24 @@ function AppBody() {
                 shadow-sm hover:shadow-md hover:border-primaryColor
                 transition-all ease-out duration-200'
             >
-              <img src={GoogleIcon} className='h-8 mr-2' />
-              <div className='font-Poppins text-sm tracking-wide font-semibold'>
+              <a
+                className='font-OpenSans text-sm tracking-wide font-medium flex items-center'
+                href='/google'
+              >
+                <img src={GoogleIcon} className='h-8 mr-2' />
                 Google
-              </div>
+              </a>
             </div>
           </div>
 
           <div className='flex justify-center items-center font-Roboto'>
             <div className='text-secondaryTextColor text-sm'>
               New to Shopee?{" "}
-              <b className='text-primaryColor cursor-pointer text-sm'>
-                Sign up
-              </b>
+              <a href='/register'>
+                <b className='text-primaryColor cursor-pointer text-sm'>
+                  Sign up
+                </b>
+              </a>
             </div>
           </div>
         </div>
@@ -154,13 +163,6 @@ function AppBody() {
 }
 
 export function BottomBar() {
-  const FollowUs = [
-    {name: "Facebook", img: FacebookBlack},
-    {name: "Instagram", img: InstagramBlack},
-    {name: "Twitter", img: TwitterBlack},
-    {name: "LinkedIn", img: LinkedInBlack},
-  ];
-
   const CustomerService = [
     "Help Centre",
     "Shopee Cares PH",
@@ -187,6 +189,19 @@ export function BottomBar() {
     "Media Contact",
   ];
 
+  const FollowUs = [
+    {name: "Facebook", img: FacebookBlack},
+    {name: "Instagram", img: InstagramBlack},
+    {name: "Twitter", img: TwitterBlack},
+    {name: "LinkedIn", img: LinkedInBlack},
+  ];
+
+  const ShopeeAppDownload = [
+    {name: "appstore", img: AppStore},
+    {name: "googleplay", img: GooglePlay},
+    {name: "appgallery", img: AppGallery},
+  ];
+
   return (
     <div className='bg-primaryBgColor p-24 font-Roboto w-full'>
       <div className='flex justify-between'>
@@ -195,11 +210,14 @@ export function BottomBar() {
             <h4 className='mb-4'>CUSTOMER SERVICE</h4>
             {CustomerService.map((data, i) => {
               return (
-                <div
-                  className='mb-2 text-sm cursor-pointer text-secondaryTextColor 
-                hover:text-primaryColor'
-                >
-                  {data}
+                <div className='mb-2'>
+                  <a
+                    className='cursor-pointer text-sm text-secondaryTextColor 
+                  hover:text-primaryColor'
+                    href={`/${data}`}
+                  >
+                    {data}
+                  </a>
                 </div>
               );
             })}
@@ -208,11 +226,14 @@ export function BottomBar() {
             <h4 className='mb-4'>ABOUT SHOPEE</h4>
             {AboutShopee.map((data, i) => {
               return (
-                <div
-                  className='mb-2 text-sm cursor-pointer text-secondaryTextColor 
-                hover:text-primaryColor'
-                >
-                  {data}
+                <div className='mb-2 '>
+                  <a
+                    className='text-sm cursor-pointer text-secondaryTextColor 
+                  hover:text-primaryColor'
+                    href={`/${data}`}
+                  >
+                    {data}
+                  </a>
                 </div>
               );
             })}
@@ -234,12 +255,15 @@ export function BottomBar() {
             <h4 className='mb-4'>FOLLOW US</h4>
             {FollowUs.map((data, i) => {
               return (
-                <div
-                  className='text-sm text-secondaryTextColor flex mb-2 cursor-pointer
-                hover:text-primaryColor self-center'
-                >
-                  <img src={data.img} className='h-6 mr-2' />
-                  {data.name}
+                <div className='mb-2'>
+                  <a
+                    className='flex cursor-pointer text-sm text-secondaryTextColor 
+                    hover:text-primaryColor self-center'
+                    href={`/${data.name}`}
+                  >
+                    <img src={data.img} className='h-6 mr-2' />
+                    {data.name}
+                  </a>
                 </div>
               );
             })}
@@ -247,25 +271,25 @@ export function BottomBar() {
           <div>
             <h4 className='mb-4'>SHOPEE APP DOWNLOAD</h4>
             <div className='flex'>
-              <div className='mr-2'>
-                <img
-                  src={QrCode}
-                  className='border-[1px] border-dividerColor rounded-md shadow-sm cursor-pointer'
-                />
-              </div>
+              <a
+                className='mr-2 border-[1px] border-dividerColor 
+                rounded-md shadow-sm cursor-pointer'
+                href='/qrcode'
+              >
+                <img src={QrCode} />
+              </a>
               <div className='flex flex-col justify-between'>
-                <img
-                  src={AppStore}
-                  className='border-[1px] border-dividerColor rounded-md shadow-sm cursor-pointer'
-                />
-                <img
-                  src={GooglePlay}
-                  className='border-[1px] border-dividerColor rounded-md shadow-sm cursor-pointer'
-                />
-                <img
-                  src={AppGallery}
-                  className='border-[1px] border-dividerColor rounded-md shadow-sm cursor-pointer'
-                />
+                {ShopeeAppDownload.map((data, i) => {
+                  return (
+                    <a
+                      className='border-[1px] border-dividerColor 
+                      rounded-md shadow-sm cursor-pointer'
+                      href={`/${data.name}`}
+                    >
+                      <img src={data.img} />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -276,6 +300,7 @@ export function BottomBar() {
 }
 
 export function Login() {
+  document.title = "Login";
   return (
     <div className='w-screen h-auto'>
       <TopAppBar />

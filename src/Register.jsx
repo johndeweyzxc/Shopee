@@ -10,20 +10,18 @@ import {TopAppBar, BottomBar} from "./Login";
 function AppBody() {
   return (
     <div className='w-full bg-primaryColor flex pt-16 pb-16 justify-center'>
-      <div className='flex flex-col justify-center mr-16 ml-16'>
+      <div className='flex flex-col justify-center mr-16 ml-16 font-Poppins'>
         <img src={ShopeeBig} className='h-60 self-center mb-8' />
-        <h2 className='text-white text-3xl text-Poppins text-center mb-4'>
+        <h2 className='text-white text-3xl text-center mb-4'>
           The leading online shopping platform
         </h2>
-        <h2 className='text-white text-3xl text-Poppins text-center'>
+        <h2 className='text-white text-3xl text-center'>
           in Southeast Asia and Taiwan
         </h2>
       </div>
 
       <div className='rounded-md bg-white p-8 mr-16 ml-16'>
-        <h2 className='mb-6 text-xl font-Poppins tracking-wide font-semibold'>
-          Login
-        </h2>
+        <h2 className='mb-6 text-xl font-Poppins tracking-wide'>Login</h2>
 
         <div className='flex flex-col w-80'>
           <div className='mb-4'>
@@ -42,13 +40,13 @@ function AppBody() {
               style={{backgroundColor: "#FB5533"}}
               sx={{width: 1}}
             >
-              <div className='font-Poppins text-base mt-1 mb-1 tracking-widest font-bold'>
+              <div className='font-OpenSans text-base mt-1 mb-1 tracking-wide font-medium'>
                 NEXT
               </div>
             </Button>
           </div>
 
-          <div className='flex items-center justify-evenly mb-6'>
+          <div className='flex items-center justify-evenly mb-6 font-Roboto'>
             <div className='bg-dividerColor h-[1px] w-full' />
             <div className='whitespace-nowrap mr-4 ml-4 text-secondaryTextColor'>
               Or
@@ -63,10 +61,13 @@ function AppBody() {
                 shadow-sm hover:shadow-md hover:border-primaryColor
                 transition-all ease-out duration-200 mr-2'
             >
-              <img src={FacebookIcon} className='h-8 mr-2' />
-              <div className='font-Poppins text-sm tracking-wide font-semibold'>
+              <a
+                className='font-OpenSans text-sm tracking-wide font-medium flex items-center'
+                href='/facebook'
+              >
+                <img src={FacebookIcon} className='h-8 mr-2' />
                 Facebook
-              </div>
+              </a>
             </div>
             <div
               className='flex justify-center items-center p-2 border-[1px] 
@@ -74,10 +75,13 @@ function AppBody() {
                 shadow-sm hover:shadow-md hover:border-primaryColor
                 transition-all ease-out duration-200'
             >
-              <img src={GoogleIcon} className='h-8 mr-2' />
-              <div className='font-Poppins text-sm tracking-wide font-semibold'>
+              <a
+                className='font-OpenSans text-sm font-medium flex items-center'
+                href='/google'
+              >
+                <img src={GoogleIcon} className='h-8 mr-2' />
                 Google
-              </div>
+              </a>
             </div>
           </div>
 
@@ -86,19 +90,21 @@ function AppBody() {
             tracking-wide ml-4 mr-4 mb-6'
           >
             By signing up, you agree to Shopee's{" "}
-            <a href='#' className='text-primaryColor'>
+            <a className='text-primaryColor' href='/termsofservice'>
               Terms of Services
             </a>{" "}
             &{" "}
-            <a href='#' className='text-primaryColor'>
+            <a className='text-primaryColor' href='/privacypolicy'>
               Privacy Policy
             </a>
           </div>
 
-          <div className='flex justify-center items-center'>
-            <div className='text-secondaryTextColor text-sm'>
+          <div className='flex justify-center items-center font-Roboto text-sm'>
+            <div className='text-secondaryTextColor'>
               Have an account?{" "}
-              <b className='text-primaryColor cursor-pointer text-sm'>Log in</b>
+              <a href='/login'>
+                <b className='text-primaryColor cursor-pointer'>Log in</b>
+              </a>
             </div>
           </div>
         </div>
@@ -108,6 +114,8 @@ function AppBody() {
 }
 
 export default function Register() {
+  document.title = "Create an account";
+
   return (
     <div className='w-screen h-auto'>
       <TopAppBar />
