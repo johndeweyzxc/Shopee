@@ -11,13 +11,14 @@ module.exports = {
         secondaryTextColor: "#616161",
 
         primaryBgColor: "#FFFFFF",
-        secondaryBgColor: "#e0e0e0",
+        secondaryBgColor: "#eeeeee",
 
         dividerColor: "#e0e0e0",
       },
       fontFamily: {
-        Roboto: ["Roboto", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
+        OpenSans: ["Open Sans", "sans-serif"],
+        Roboto: ["Roboto", "sans-serif"],
       },
     },
   },
