@@ -5,6 +5,7 @@ import {Login} from "./Login";
 import Register from "./Register";
 import SellOnShopee from "./SellOnShopee";
 import SellerCenter from "./SellerCenter";
+import Shop from "./Shop";
 
 function AppRouter() {
   return (
@@ -15,6 +16,7 @@ function AppRouter() {
         <Route path='/register' element={<Register />} />
         <Route path='/sellonshopee' element={<SellOnShopee />} />
         <Route path='/sellercenter' element={<SellerCenter />} />
+        <Route path='/shop/:shopname' element={<Shop />} />
       </Routes>
     </Router>
   );

@@ -108,48 +108,56 @@ function AppBody() {
       price: "₱100",
       numberOfSold: "10.9K",
       img: DailyDiscover1,
+      shopName: "First Shop",
     },
     {
       productTitle: "Unisex Cotton jogger pants",
       price: "₱98",
       numberOfSold: "7.6K",
       img: DailyDiscover2,
+      shopName: "Second Shop",
     },
     {
       productTitle: "Womens Summer Slippers",
       price: "₱78",
       numberOfSold: "4.5K",
       img: DailyDiscover3,
+      shopName: "Third Shop",
     },
     {
       productTitle: "Lucky Attack on Titan Premium",
       price: "₱89",
       numberOfSold: "1.9K",
       img: DailyDiscover4,
+      shopName: "Fourth Shop",
     },
     {
       productTitle: "Bumper Phone Case",
       price: "₱61",
       numberOfSold: "18.7K",
       img: DailyDiscover5,
+      shopName: "Fifth Shop",
     },
     {
       productTitle: "South Korean high rubber shoes",
       price: "₱92",
       numberOfSold: "2.9K",
       img: DailyDiscover6,
+      shopName: "Sixth Shop",
     },
     {
       productTitle: "5 Packs of Piattos (40g)",
       price: "₱83",
       numberOfSold: "2.5K",
       img: DailyDiscover7,
+      shopName: "Seventh Shop",
     },
     {
       productTitle: "R&O Korean Sling shoulder",
       price: "₱85",
       numberOfSold: "5.6K",
       img: DailyDiscover8,
+      shopName: "Eighth Shop",
     },
   ];
 
@@ -323,7 +331,7 @@ function AppBody() {
                   rounded-md shadow-md cursor-pointer hover:border-primaryColor 
                   hover:shadow-lg transition-all duration-200 ease-in-out 
                   font-Roboto flex flex-col justify-between'
-                  href='/dailydiscover'
+                  href={`/shop/${data.shopName}`}
                 >
                   <div className='flex justify-center'>
                     <img src={data.img} className='rounded-lg' />
