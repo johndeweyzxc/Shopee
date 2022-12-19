@@ -11,9 +11,11 @@ module.exports = {
         secondaryTextColor: "#616161",
 
         primaryBgColor: "#FFFFFF",
-        secondaryBgColor: "#eeeeee",
+        secondaryBgColor: "#f5f5f5",
 
         dividerColor: "#e0e0e0",
+        greenOnline: "#00c853",
+        happyBlue: "#0091ea",
       },
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
