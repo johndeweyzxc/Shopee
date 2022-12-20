@@ -186,7 +186,7 @@ function KeyBenefits() {
         {Benefits.map((data, i) => {
           return (
             <div
-              className='bg-primaryBgColor p-6 m-4 rounded-xl shadow-lg w-1/5 cursor-pointer
+              className='bg-primaryBgColor p-6 m-4 rounded-xl shadow-lg w-52 cursor-pointer
                 border-2 border-primaryBgColor transition-all ease-in-out duration-200 
                 flex flex-col items-center justify-around hover:shadow-xl'
             >

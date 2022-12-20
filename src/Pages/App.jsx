@@ -238,7 +238,7 @@ function AppBody() {
   return (
     <div className='h-full w-full flex border-b-2 border-primaryColor'>
       {/* Side Navigation */}
-      <section className='w-[280px] ml-2 mr-2 overflow-y-auto border-r-[1px] border-dividerColor'>
+      <section className='w-96 ml-2 mr-2 overflow-y-auto border-r-[1px] border-dividerColor'>
         <List
           sx={{width: "100%", maxWidth: 320, bgcolor: "background.paper"}}
           component='nav'
@@ -301,14 +301,14 @@ function AppBody() {
           <h2 className='text-center font-Poppins text-2xl tracking-wide text-primaryColor mb-4'>
             Top Products
           </h2>
-          <section className='grid grid-cols-5'>
+          <section className='flex flex-wrap justify-center'>
             {TopProducts.map((data, i) => {
               return (
                 <a
                   className='mb-4 mr-4 ml-4 p-2 border-2 border-dividerColor 
                     rounded-md shadow-md cursor-pointer hover:border-primaryColor 
                     hover:shadow-lg transition-all duration-200 ease-in-out 
-                    font-Roboto flex flex-col justify-between'
+                    font-Roboto flex flex-col justify-between w-44'
                   href='/topproduct'
                 >
                   <div className='flex justify-center'>
@@ -339,14 +339,14 @@ function AppBody() {
           <h2 className='text-center font-Poppins text-2xl tracking-wide text-primaryColor mb-4'>
             Daily Discover
           </h2>
-          <div className='grid grid-cols-5'>
+          <div className='flex flex-wrap justify-center'>
             {ItemsForSale.map((data, i) => {
               return (
                 <a
                   className='mb-4 mr-4 ml-4 p-2 border-2 border-dividerColor 
                   rounded-md shadow-md cursor-pointer hover:border-primaryColor 
                   hover:shadow-lg transition-all duration-200 ease-in-out 
-                  font-Roboto flex flex-col justify-between'
+                  font-Roboto flex flex-col justify-between w-44'
                   href={`/shop/${data.shopName}`}
                 >
                   <div className='flex justify-center'>

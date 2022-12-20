@@ -411,7 +411,7 @@ function ProductTabs() {
       {ProductCategory.map((data, i) => {
         return (
           <ProductTabPanel value={value} index={i} key={uuidv4()}>
-            <div className='flex flex-wrap'>{Home}</div>
+            <div className='flex flex-wrap justify-center'>{Home}</div>
           </ProductTabPanel>
         );
       })}
