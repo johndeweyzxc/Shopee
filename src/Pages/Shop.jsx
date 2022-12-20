@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {v4 as uuidv4} from "uuid";
 
 import {TopAppBar} from "./App";
+import {BottomBar} from "./Login";
 import ShopBg from "../assets/images/ShopImages/shop-bg-image.jpg";
 import InstagramIcon from "../assets/images/instagram-icon.png";
 import FacebookIcon from "../assets/images/facebook-icon.png";
@@ -10,7 +11,7 @@ import GoogleIcon from "../assets/images/google-icon.png";
 
 import {List, ListItemButton, ListItemText, Collapse} from "@mui/material";
 import {FormGroup, FormControlLabel, Checkbox, Typography} from "@mui/material";
-import {Button} from "@mui/material";
+import {Button, Tooltip, IconButton} from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
@@ -18,11 +19,21 @@ import {Add, CheckCircle, Chat, Circle, Storefront} from "@mui/icons-material";
 import {Groups as Followers, Group as Following} from "@mui/icons-material";
 import {StarRate, ManageAccounts as Join} from "@mui/icons-material";
 import {ChevronRight as ArrowRight} from "@mui/icons-material";
+import {ShoppingCart} from "@mui/icons-material";
 
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+
+import DailyDiscover1 from "../assets/images/DailyDiscover/daily-discover-1.jpg";
+import DailyDiscover2 from "../assets/images/DailyDiscover/daily-discover-2.jpg";
+import DailyDiscover3 from "../assets/images/DailyDiscover/daily-discover-3.jpg";
+import DailyDiscover4 from "../assets/images/DailyDiscover/daily-discover-4.jpg";
+import DailyDiscover5 from "../assets/images/DailyDiscover/daily-discover-6.jpg";
+import DailyDiscover6 from "../assets/images/DailyDiscover/daily-discover-5.jpg";
+import DailyDiscover7 from "../assets/images/DailyDiscover/daily-discover-7.jpg";
+import DailyDiscover8 from "../assets/images/DailyDiscover/daily-discover-8.jpg";
 
 function ShopSideCheckboxes({SideNavigationList}) {
   const CheckBoxes = (listData, uniqueId) => {
@@ -214,7 +225,7 @@ function ProductTabPanel(props) {
     >
       {value === index && (
         <Box sx={{p: 3}}>
-          <Typography>{children}</Typography>
+          <Typography component={"span"}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -243,6 +254,132 @@ function ProductTabs() {
     "Sports & Travel",
     "Women's Apparel",
   ];
+
+  const ProductPool = [
+    {
+      productTitle: "fashion mini backpack for women",
+      price: "₱100",
+      numberOfSold: "10.9K",
+      img: DailyDiscover1,
+      shopName: "First Shop",
+    },
+    {
+      productTitle: "Womens Summer Slippers",
+      price: "₱78",
+      numberOfSold: "4.5K",
+      img: DailyDiscover3,
+      shopName: "Third Shop",
+    },
+    {
+      productTitle: "South Korean high rubber shoes",
+      price: "₱92",
+      numberOfSold: "2.9K",
+      img: DailyDiscover6,
+      shopName: "Sixth Shop",
+    },
+    {
+      productTitle: "R&O Korean Sling shoulder",
+      price: "₱85",
+      numberOfSold: "5.6K",
+      img: DailyDiscover8,
+      shopName: "Eighth Shop",
+    },
+    {
+      productTitle: "fashion mini backpack for women",
+      price: "₱100",
+      numberOfSold: "10.9K",
+      img: DailyDiscover1,
+      shopName: "First Shop",
+    },
+    {
+      productTitle: "Lucky Attack on Titan Premium",
+      price: "₱89",
+      numberOfSold: "1.9K",
+      img: DailyDiscover4,
+      shopName: "Fourth Shop",
+    },
+    {
+      productTitle: "Unisex Cotton jogger pants",
+      price: "₱98",
+      numberOfSold: "7.6K",
+      img: DailyDiscover2,
+      shopName: "Second Shop",
+    },
+    {
+      productTitle: "R&O Korean Sling shoulder",
+      price: "₱85",
+      numberOfSold: "5.6K",
+      img: DailyDiscover8,
+      shopName: "Eighth Shop",
+    },
+    {
+      productTitle: "5 Packs of Piattos (40g)",
+      price: "₱83",
+      numberOfSold: "2.5K",
+      img: DailyDiscover7,
+      shopName: "Seventh Shop",
+    },
+    {
+      productTitle: "Bumper Phone Case",
+      price: "₱61",
+      numberOfSold: "18.7K",
+      img: DailyDiscover5,
+      shopName: "Fifth Shop",
+    },
+    {
+      productTitle: "Unisex Cotton jogger pants",
+      price: "₱98",
+      numberOfSold: "7.6K",
+      img: DailyDiscover2,
+      shopName: "Second Shop",
+    },
+  ];
+
+  const Home = ProductPool.map((product, i) => {
+    // Choose a product at random on a
+    var randomNum = Math.floor(Math.random() * ProductPool.length);
+    var selectedProduct = ProductPool[randomNum];
+    return (
+      <a
+        className='mb-4 mr-4 ml-4 p-2 border-2 border-dividerColor 
+        rounded-md shadow-md cursor-pointer hover:border-primaryColor 
+        hover:shadow-lg transition-all duration-200 ease-in-out 
+        font-Roboto flex flex-col justify-between w-44'
+      >
+        <div className='flex justify-center'>
+          <img src={selectedProduct.img} className='rounded-lg' />
+        </div>
+        <div className='text-center mt-2 text-sm '>
+          {selectedProduct.productTitle}
+        </div>
+        <div className='flex justify-between mt-4'>
+          <div className='text-primaryColor text-sm'>
+            {selectedProduct.price}
+          </div>
+          <div className='text-xs text-secondaryTextColor self-center'>
+            {selectedProduct.numberOfSold} sold
+          </div>
+        </div>
+        <div className='h-[2px] bg-dividerColor mt-2 mb-2' />
+        <div className='flex justify-between items-center'>
+          <Tooltip title='Add to Cart' placement='top' arrow>
+            <IconButton>
+              <ShoppingCart
+                sx={{color: "#000", cursor: "pointer", height: 18}}
+              />
+            </IconButton>
+          </Tooltip>
+          <div
+            className='text-white text-sm bg-primaryColor px-4 py-1 tracking-wide
+          rounded-full text-Roboto border-2 border-primaryColor hover:bg-primaryBgColor 
+          hover:text-primaryColor transition-all duration-100 ease-in-out'
+          >
+            Buy
+          </div>
+        </div>
+      </a>
+    );
+  });
 
   const [value, setValue] = React.useState(0);
 
@@ -274,7 +411,7 @@ function ProductTabs() {
       {ProductCategory.map((data, i) => {
         return (
           <ProductTabPanel value={value} index={i} key={uuidv4()}>
-            {data}
+            <div className='flex flex-wrap'>{Home}</div>
           </ProductTabPanel>
         );
       })}
@@ -343,7 +480,7 @@ function AppBody({shopname}) {
   ];
 
   return (
-    <div className='w-full h-full flex'>
+    <div className='w-full h-full flex border-b-2 border-primaryColor'>
       {/* Side Navigation */}
       <section className='w-[260px] ml-4 mr-4 overflow-y-auto border-r-[1px] border-dividerColor'>
         <ShopSideCheckboxes SideNavigationList={SideNavigationList} />
@@ -368,7 +505,7 @@ function AppBody({shopname}) {
           </section>
         </div>
 
-        {/* Products in the shop */}
+        {/* Categorized products in the shop */}
         <div>
           <ProductTabs />
         </div>
@@ -385,6 +522,7 @@ export default function Shop() {
     <div className='w-screen h-auto'>
       <TopAppBar />
       <AppBody shopname={shopname} />
+      <BottomBar />
     </div>
   );
 }
