@@ -1,25 +1,26 @@
 import React from "react";
+
+import ShopeeHeader from "../assets/images/shopee-on-white.jpg";
+import ShopeeBig from "../assets/images/shopee-big.jpg";
+import GoogleIcon from "../assets/images/google-icon.png";
+import FacebookIcon from "../assets/images/facebook-icon.png";
+
+import FacebookBlack from "../assets/images/FollowUs/facebook-icon.png";
+import InstagramBlack from "../assets/images/FollowUs/instagram-icon.png";
+import LinkedInBlack from "../assets/images/FollowUs/linked-in-icon.png";
+import TwitterBlack from "../assets/images/FollowUs/twitter-icon.png";
+import Payments from "../assets/images/payments.jpg";
+import Logistics from "../assets/images/logistics.jpg";
+
+import QrCode from "../assets/images/ShopeeAppDL/qr-code.jpg";
+import AppStore from "../assets/images/ShopeeAppDL/app-store.jpg";
+import GooglePlay from "../assets/images/ShopeeAppDL/google-play.jpg";
+import AppGallery from "../assets/images/ShopeeAppDL/app-gallery.jpg";
+
 import {FormControl, OutlinedInput} from "@mui/material";
 import {InputLabel, InputAdornment} from "@mui/material";
 import {Button, TextField, IconButton} from "@mui/material";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
-
-import ShopeeHeader from "./assets/images/shopee-on-white.jpg";
-import ShopeeBig from "./assets/images/shopee-big.jpg";
-import GoogleIcon from "./assets/images/google-icon.png";
-import FacebookIcon from "./assets/images/facebook-icon.png";
-
-import FacebookBlack from "./assets/images/FollowUs/facebook-icon.png";
-import InstagramBlack from "./assets/images/FollowUs/instagram-icon.png";
-import LinkedInBlack from "./assets/images/FollowUs/linked-in-icon.png";
-import TwitterBlack from "./assets/images/FollowUs/twitter-icon.png";
-import Payments from "./assets/images/payments.jpg";
-import Logistics from "./assets/images/logistics.jpg";
-
-import QrCode from "./assets/images/ShopeeAppDL/qr-code.jpg";
-import AppStore from "./assets/images/ShopeeAppDL/app-store.jpg";
-import GooglePlay from "./assets/images/ShopeeAppDL/google-play.jpg";
-import AppGallery from "./assets/images/ShopeeAppDL/app-gallery.jpg";
 
 export function TopAppBar() {
   return (

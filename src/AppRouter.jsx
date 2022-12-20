@@ -1,11 +1,12 @@
-import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
 import React from "react";
-import {App} from "./App";
-import {Login} from "./Login";
-import Register from "./Register";
-import SellOnShopee from "./SellOnShopee";
-import SellerCenter from "./SellerCenter";
-import Shop from "./Shop";
+import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
+
+import {App} from "./Pages/App";
+import Shop from "./Pages/Shop";
+import {Login} from "./Pages/Login";
+import Register from "./Pages/Register";
+import SellOnShopee from "./Pages/SellOnShopee";
+import SellerCenter from "./Pages/SellerCenter";
 
 function AppRouter() {
   return (

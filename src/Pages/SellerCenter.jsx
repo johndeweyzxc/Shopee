@@ -1,13 +1,14 @@
 import React from "react";
-import ShopeeHeader from "./assets/images/shopee-on-white.jpg";
-import FacebookBlack from "./assets/images/FollowUs/facebook-icon.png";
-import InstagramBlack from "./assets/images/FollowUs/instagram-icon.png";
-import PowerSeller from "./assets/images/SellerCenter/PowerSeller.jpg";
 
 import {Button, TextField, IconButton} from "@mui/material";
 import {FormControl, OutlinedInput} from "@mui/material";
 import {InputLabel, InputAdornment} from "@mui/material";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
+
+import ShopeeHeader from "../assets/images/shopee-on-white.jpg";
+import FacebookBlack from "../assets/images/FollowUs/facebook-icon.png";
+import InstagramBlack from "../assets/images/FollowUs/instagram-icon.png";
+import PowerSeller from "../assets/images/SellerCenter/PowerSeller.jpg";
 
 function TopAppBar() {
   return (

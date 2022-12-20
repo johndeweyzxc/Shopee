@@ -1,35 +1,23 @@
 import React from "react";
-import {TopAppBar} from "./App";
-import {ChevronRight as ArrowRight} from "@mui/icons-material";
 import {useParams} from "react-router-dom";
 import {v4 as uuidv4} from "uuid";
 
-import {List} from "@mui/material";
-import {ListItemButton} from "@mui/material";
-import {ListItemText} from "@mui/material";
-import {Collapse} from "@mui/material";
+import {TopAppBar} from "./App";
+import ShopBg from "../assets/images/ShopImages/shop-bg-image.jpg";
+import InstagramIcon from "../assets/images/instagram-icon.png";
+import FacebookIcon from "../assets/images/facebook-icon.png";
+import GoogleIcon from "../assets/images/google-icon.png";
+
+import {List, ListItemButton, ListItemText, Collapse} from "@mui/material";
+import {FormGroup, FormControlLabel, Checkbox, Typography} from "@mui/material";
+import {Button} from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import {FormGroup} from "@mui/material";
-import {FormControlLabel} from "@mui/material";
-import {Checkbox} from "@mui/material";
-import {Typography} from "@mui/material";
 
-import ShopBg from "./assets/images/ShopImages/shop-bg-image.jpg";
-import {Add} from "@mui/icons-material";
-import {CheckCircle} from "@mui/icons-material";
-import {Chat} from "@mui/icons-material";
-import {Circle} from "@mui/icons-material";
-import {Storefront} from "@mui/icons-material";
-import {Groups as Followers} from "@mui/icons-material";
-import {Group as Following} from "@mui/icons-material";
-import {StarRate} from "@mui/icons-material";
-import {ManageAccounts as Join} from "@mui/icons-material";
-import {Button} from "@mui/material";
-
-import InstagramIcon from "./assets/images/instagram-icon.png";
-import FacebookIcon from "./assets/images/facebook-icon.png";
-import GoogleIcon from "./assets/images/google-icon.png";
+import {Add, CheckCircle, Chat, Circle, Storefront} from "@mui/icons-material";
+import {Groups as Followers, Group as Following} from "@mui/icons-material";
+import {StarRate, ManageAccounts as Join} from "@mui/icons-material";
+import {ChevronRight as ArrowRight} from "@mui/icons-material";
 
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
@@ -90,7 +78,10 @@ function ShopSideCheckboxes({SideNavigationList}) {
 
 function ShopStatus({shopname}) {
   return (
-    <>
+    <div
+      className='p-8 m-4 bg-secondaryBgColor font-Roboto rounded-xl 
+    border-2 border-dividerColor shadow-md'
+    >
       <img src={ShopBg} className='rounded-lg w-72' />
       <div className='flex items-center mt-6 justify-between'>
         <div className='flex items-center'>
@@ -128,7 +119,7 @@ function ShopStatus({shopname}) {
           </Typography>
         </Button>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -187,18 +178,23 @@ function ShopInformation() {
 
 function ShopSocialMedia() {
   return (
-    <div className='flex p-4 justify-around'>
-      <div className='flex items-center cursor-pointer'>
-        <img src={InstagramIcon} className='h-8 mr-2' />
-        <div>@fourth_shop</div>
-      </div>
-      <div className='flex items-center cursor-pointer'>
-        <img src={FacebookIcon} className='h-8 mr-2' />
-        <div>fourthShop</div>
-      </div>
-      <div className='flex items-center cursor-pointer'>
-        <img src={GoogleIcon} className='h-8 mr-2' />
-        <div>fourthshop@gmail.com</div>
+    <div
+      className='m-4 bg-secondaryBgColor font-Roboto rounded-xl border-2
+    border-dividerColor shadow-md'
+    >
+      <div className='flex p-4 justify-around'>
+        <div className='flex items-center cursor-pointer'>
+          <img src={InstagramIcon} className='h-8 mr-2' />
+          <div>@fourth_shop</div>
+        </div>
+        <div className='flex items-center cursor-pointer'>
+          <img src={FacebookIcon} className='h-8 mr-2' />
+          <div>fourthShop</div>
+        </div>
+        <div className='flex items-center cursor-pointer'>
+          <img src={GoogleIcon} className='h-8 mr-2' />
+          <div>fourthshop@gmail.com</div>
+        </div>
       </div>
     </div>
   );
@@ -363,25 +359,16 @@ function AppBody({shopname}) {
           <div>{shopname}</div>
         </div>
 
+        {/* Information about the shop */}
         <div className='flex justify-center'>
-          <section
-            className='p-8 m-4 bg-secondaryBgColor font-Roboto rounded-xl 
-            border-2 border-dividerColor shadow-md'
-          >
-            <ShopStatus shopname={shopname} />
-          </section>
+          <ShopStatus shopname={shopname} />
           <section className='flex flex-col'>
             <ShopInformation />
-
-            <div
-              className='m-4 bg-secondaryBgColor font-Roboto rounded-xl border-2
-              border-dividerColor shadow-md'
-            >
-              <ShopSocialMedia />
-            </div>
+            <ShopSocialMedia />
           </section>
         </div>
 
+        {/* Products in the shop */}
         <div>
           <ProductTabs />
         </div>

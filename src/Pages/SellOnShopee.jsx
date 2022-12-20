@@ -1,8 +1,10 @@
 import React from "react";
-import {TopAppBar} from "./App";
-import {Check} from "@mui/icons-material";
-import {Button} from "@mui/material";
 
+import {TopAppBar} from "./App";
+import {BottomBar} from "./Login";
+
+import {Button} from "@mui/material";
+import {Check} from "@mui/icons-material";
 import {TrendingUp as GrowYourBusiness} from "@mui/icons-material";
 import {Speed as FastSelling} from "@mui/icons-material";
 import {LocalShipping as SellerPromos} from "@mui/icons-material";
@@ -12,15 +14,11 @@ import {HowToReg as FreeRegistration} from "@mui/icons-material";
 import {Diversity3 as ServerAffiliate} from "@mui/icons-material";
 import {SupportAgent as OperationalSupport} from "@mui/icons-material";
 import {LiveTv as ShopeeLivestream} from "@mui/icons-material";
-
 import {Storefront as ShopeeSellerCenter} from "@mui/icons-material";
 import {Hub as EducationHub} from "@mui/icons-material";
 import {InsertChart as FastTrackProgram} from "@mui/icons-material";
-
 import {Call as Phone} from "@mui/icons-material";
 import {AlternateEmail as EmailAt} from "@mui/icons-material";
-
-import {BottomBar} from "./Login";
 
 function GetStarted() {
   const MarketPlace = [
@@ -43,8 +41,8 @@ function GetStarted() {
       </h2>
       <div className='flex justify-evenly mt-12'>
         <section
-          className='bg-primaryBgColor p-8 rounded-xl shadow-lg w-1/3 cursor-pointer
-            border-2 border-primaryBgColor hover:shadow-xl hover:border-primaryColor
+          className='bg-primaryBgColor p-8 rounded-xl shadow-xl w-1/3 cursor-pointer
+            border-2 border-primaryBgColor hover:border-primaryColor
             transition-all ease-in-out duration-200 flex flex-col justify-between'
         >
           <div>
@@ -83,8 +81,8 @@ function GetStarted() {
         </section>
 
         <section
-          className='bg-primaryBgColor p-8 rounded-xl shadow-lg w-1/3 cursor-pointer
-            border-2 border-primaryBgColor hover:shadow-xl hover:border-primaryColor
+          className='bg-primaryBgColor p-8 rounded-xl shadow-xl w-1/3 cursor-pointer
+            border-2 border-primaryBgColor hover:border-primaryColor
             transition-all ease-in-out duration-200 flex flex-col justify-between'
         >
           <div>

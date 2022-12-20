@@ -1,23 +1,25 @@
 import React from "react";
+
+import {
+  Search,
+  MonetizationOn,
+  LocalShipping,
+  Storefront,
+} from "@mui/icons-material";
+import {
+  ConfirmationNumber,
+  AttachMoney,
+  Store,
+  Public,
+} from "@mui/icons-material";
+import {DevicesOther, Loyalty, Token, ShoppingCart} from "@mui/icons-material";
 import {IconButton} from "@mui/material";
-import {Search} from "@mui/icons-material";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import {MonetizationOn} from "@mui/icons-material";
-import {LocalShipping} from "@mui/icons-material";
-import {Storefront} from "@mui/icons-material";
-import {ConfirmationNumber} from "@mui/icons-material";
-import {AttachMoney} from "@mui/icons-material";
-import {Store} from "@mui/icons-material";
-import {Public} from "@mui/icons-material";
-import {DevicesOther} from "@mui/icons-material";
-import {Loyalty} from "@mui/icons-material";
-import {Token} from "@mui/icons-material";
-import {ShoppingCart} from "@mui/icons-material";
 
-import BigSale from "./assets/images/big-christmas-sale.jpg";
-import SaluSalo from "./assets/images/pinoy-salu-salo.jpg";
-import ShopeeBeauty from "./assets/images/shopee-beauty.jpg";
+import BigSale from "../assets/images/big-christmas-sale.jpg";
+import SaluSalo from "../assets/images/pinoy-salu-salo.jpg";
+import ShopeeBeauty from "../assets/images/shopee-beauty.jpg";
 
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -27,26 +29,26 @@ import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
-import BluetoothEarbuds from "./assets/images/TopProducts/bluetooth-earbuds.jpg";
-import StainlessSteelTumbler from "./assets/images/TopProducts/tumbler.jpg";
-import Sandals from "./assets/images/TopProducts/sandals.jpg";
-import PoloForMen from "./assets/images/TopProducts/polo.jpg";
-import KoreanRubberShoe from "./assets/images/TopProducts/rubber-shoes.jpg";
-import BluetoothEarphone from "./assets/images/TopProducts/bluetooth-earphones.jpg";
-import SleeveDress from "./assets/images/TopProducts/sleeve-dress.jpg";
-import WaterBottle from "./assets/images/TopProducts/water-bottle.jpg";
-import SpinningPen from "./assets/images/TopProducts/spinning-pen.jpg";
-import SofaCover from "./assets/images/TopProducts/elastic-sofa-cover.jpg";
+import BluetoothEarbuds from "../assets/images/TopProducts/bluetooth-earbuds.jpg";
+import StainlessSteelTumbler from "../assets/images/TopProducts/tumbler.jpg";
+import Sandals from "../assets/images/TopProducts/sandals.jpg";
+import PoloForMen from "../assets/images/TopProducts/polo.jpg";
+import KoreanRubberShoe from "../assets/images/TopProducts/rubber-shoes.jpg";
+import BluetoothEarphone from "../assets/images/TopProducts/bluetooth-earphones.jpg";
+import SleeveDress from "../assets/images/TopProducts/sleeve-dress.jpg";
+import WaterBottle from "../assets/images/TopProducts/water-bottle.jpg";
+import SpinningPen from "../assets/images/TopProducts/spinning-pen.jpg";
+import SofaCover from "../assets/images/TopProducts/elastic-sofa-cover.jpg";
 
+import DailyDiscover1 from "../assets/images/DailyDiscover/daily-discover-1.jpg";
+import DailyDiscover2 from "../assets/images/DailyDiscover/daily-discover-2.jpg";
+import DailyDiscover3 from "../assets/images/DailyDiscover/daily-discover-3.jpg";
+import DailyDiscover4 from "../assets/images/DailyDiscover/daily-discover-4.jpg";
+import DailyDiscover5 from "../assets/images/DailyDiscover/daily-discover-6.jpg";
+import DailyDiscover6 from "../assets/images/DailyDiscover/daily-discover-5.jpg";
+import DailyDiscover7 from "../assets/images/DailyDiscover/daily-discover-7.jpg";
+import DailyDiscover8 from "../assets/images/DailyDiscover/daily-discover-8.jpg";
 import {BottomBar} from "./Login";
-import DailyDiscover1 from "./assets/images/DailyDiscover/daily-discover-1.jpg";
-import DailyDiscover2 from "./assets/images/DailyDiscover/daily-discover-2.jpg";
-import DailyDiscover3 from "./assets/images/DailyDiscover/daily-discover-3.jpg";
-import DailyDiscover4 from "./assets/images/DailyDiscover/daily-discover-4.jpg";
-import DailyDiscover5 from "./assets/images/DailyDiscover/daily-discover-6.jpg";
-import DailyDiscover6 from "./assets/images/DailyDiscover/daily-discover-5.jpg";
-import DailyDiscover7 from "./assets/images/DailyDiscover/daily-discover-7.jpg";
-import DailyDiscover8 from "./assets/images/DailyDiscover/daily-discover-8.jpg";
 
 export function TopAppBar() {
   return (
@@ -302,7 +304,7 @@ function AppBody() {
             {TopProducts.map((data, i) => {
               return (
                 <a
-                  className='mb-4 mr-4 ml-4 p-2 border-[1px] border-dividerColor 
+                  className='mb-4 mr-4 ml-4 p-2 border-2 border-dividerColor 
                       rounded-md shadow-md cursor-pointer hover:border-primaryColor 
                       hover:shadow-lg transition-all duration-200 ease-in-out 
                       font-Roboto'
@@ -327,7 +329,7 @@ function AppBody() {
             {ItemsForSale.map((data, i) => {
               return (
                 <a
-                  className='mb-4 mr-4 ml-4 p-2 border-[1px] border-dividerColor 
+                  className='mb-4 mr-4 ml-4 p-2 border-2 border-dividerColor 
                   rounded-md shadow-md cursor-pointer hover:border-primaryColor 
                   hover:shadow-lg transition-all duration-200 ease-in-out 
                   font-Roboto flex flex-col justify-between'

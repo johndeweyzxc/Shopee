@@ -1,11 +1,11 @@
 import React from "react";
-import {Button, TextField} from "@mui/material";
 
-import ShopeeBig from "./assets/images/shopee-big.jpg";
-import GoogleIcon from "./assets/images/google-icon.png";
-import FacebookIcon from "./assets/images/facebook-icon.png";
-
+import ShopeeBig from "../assets/images/shopee-big.jpg";
+import GoogleIcon from "../assets/images/google-icon.png";
+import FacebookIcon from "../assets/images/facebook-icon.png";
 import {TopAppBar, BottomBar} from "./Login";
+
+import {Button, TextField} from "@mui/material";
 
 function AppBody() {
   return (
