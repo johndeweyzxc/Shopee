@@ -3,7 +3,8 @@ import React from "react";
 import ShopeeBig from "../assets/images/shopee-big.jpg";
 import GoogleIcon from "../assets/images/google-icon.png";
 import FacebookIcon from "../assets/images/facebook-icon.png";
-import {TopAppBar, BottomBar} from "./Login";
+import TopBar from "./Components/TopBar";
+import BottomBar from "./Components/BottomBar";
 
 import {Button, TextField} from "@mui/material";
 
@@ -118,7 +119,7 @@ export default function Register() {
 
   return (
     <div className='w-screen h-auto'>
-      <TopAppBar />
+      <TopBar />
       <AppBody />
       <BottomBar />
     </div>

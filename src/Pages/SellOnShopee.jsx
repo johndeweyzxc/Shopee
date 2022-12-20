@@ -1,7 +1,7 @@
 import React from "react";
 
-import {TopAppBar} from "./App";
-import {BottomBar} from "./Login";
+import MainTopBar from "./Components/MainTopBar";
+import BottomBar from "./Components/BottomBar";
 
 import {Button} from "@mui/material";
 import {Check} from "@mui/icons-material";
@@ -302,7 +302,7 @@ export default function SellOnShopee() {
   document.title = "Sell on Shopee";
   return (
     <div className='w-screen h-auto'>
-      <TopAppBar />
+      <MainTopBar />
       <AppBody />
       <BottomBar />
     </div>

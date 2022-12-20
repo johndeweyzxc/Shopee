@@ -2,8 +2,8 @@ import React from "react";
 import {useParams} from "react-router-dom";
 import {v4 as uuidv4} from "uuid";
 
-import {TopAppBar} from "./App";
-import {BottomBar} from "./Login";
+import MainTopBar from "./Components/MainTopBar";
+import BottomBar from "./Components/BottomBar";
 import ShopBg from "../assets/images/ShopImages/shop-bg-image.jpg";
 import InstagramIcon from "../assets/images/instagram-icon.png";
 import FacebookIcon from "../assets/images/facebook-icon.png";
@@ -520,7 +520,7 @@ export default function Shop() {
   document.title = shopname;
   return (
     <div className='w-screen h-auto'>
-      <TopAppBar />
+      <MainTopBar />
       <AppBody shopname={shopname} />
       <BottomBar />
     </div>

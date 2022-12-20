@@ -1,9 +1,9 @@
 import React from "react";
 import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
 
-import {App} from "./Pages/App";
+import App from "./Pages/App";
 import Shop from "./Pages/Shop";
-import {Login} from "./Pages/Login";
+import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import SellOnShopee from "./Pages/SellOnShopee";
 import SellerCenter from "./Pages/SellerCenter";

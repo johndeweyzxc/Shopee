@@ -1,11 +1,6 @@
 import React from "react";
 
-import {
-  Search,
-  MonetizationOn,
-  LocalShipping,
-  Storefront,
-} from "@mui/icons-material";
+import {MonetizationOn, LocalShipping, Storefront} from "@mui/icons-material";
 import {
   ConfirmationNumber,
   AttachMoney,
@@ -49,60 +44,8 @@ import DailyDiscover5 from "../assets/images/DailyDiscover/daily-discover-6.jpg"
 import DailyDiscover6 from "../assets/images/DailyDiscover/daily-discover-5.jpg";
 import DailyDiscover7 from "../assets/images/DailyDiscover/daily-discover-7.jpg";
 import DailyDiscover8 from "../assets/images/DailyDiscover/daily-discover-8.jpg";
-import {BottomBar} from "./Login";
-
-export function TopAppBar() {
-  return (
-    <header className='w-full bg-primaryColor p-4 pl-6 pr-6'>
-      <section className='flex'>
-        <h1 className='text-3xl text-white font-Poppins mr-8 self-center'>
-          Shopee
-        </h1>
-        <div className='flex bg-white p-2 rounded-full w-full'>
-          <input
-            placeholder='Sign up and get 100% off on your first order'
-            className='text-base text-textColor font-Roboto outline-none pl-2 pr-2 w-full
-            placeholder:font-Roboto placeholder:text-sm'
-          />
-          <IconButton sx={{padding: 0}}>
-            <Search />
-          </IconButton>
-        </div>
-        <div className='w-full flex items-center ml-4 font-OpenSans text-white text-sm'>
-          <a className='p-2 cursor-pointer mr-[1px]' href='/sellonshopee'>
-            Sell on Shopee
-          </a>
-          <a className='p-2 cursor-pointer mr-[1px]' href='/sellercenter'>
-            Seller Center
-          </a>
-          <a className='p-2 cursor-pointer mr-[1px]' href='/download'>
-            Download
-          </a>
-          <a className='p-2 cursor-pointer mr-[1px]' href='/help'>
-            Help
-          </a>
-        </div>
-        <div className='flex font-Poppins'>
-          <div className='self-center mr-8 cursor-pointer'>
-            <ShoppingCart sx={{color: "#FFFF"}} />
-          </div>
-          <a
-            className='text-white text-lg p-2 cursor-pointer mr-4'
-            href='/register'
-          >
-            Register
-          </a>
-          <a
-            className='text-white text-lg p-2 cursor-pointer mr-4'
-            href='/login'
-          >
-            Login
-          </a>
-        </div>
-      </section>
-    </header>
-  );
-}
+import BottomBar from "./Components/BottomBar";
+import MainTopBar from "./Components/MainTopBar";
 
 function AppBody() {
   const ItemsForSale = [
@@ -390,7 +333,7 @@ function AppBody() {
   );
 }
 
-export function App() {
+export default function App() {
   const SampleChipData = [
     "Shoes for Men",
     "Dress",
@@ -421,7 +364,7 @@ export function App() {
   document.title = "Shopee";
   return (
     <div className='w-screen h-auto'>
-      <TopAppBar />
+      <MainTopBar />
       <SuggestionChips />
       <AppBody />
       <BottomBar />
