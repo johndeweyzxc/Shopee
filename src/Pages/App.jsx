@@ -16,6 +16,7 @@ import {DevicesOther, Loyalty, Token, ShoppingCart} from "@mui/icons-material";
 import {IconButton} from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import Tooltip from "@mui/material/Tooltip";
 
 import BigSale from "../assets/images/big-christmas-sale.jpg";
 import SaluSalo from "../assets/images/pinoy-salu-salo.jpg";
@@ -305,15 +306,28 @@ function AppBody() {
               return (
                 <a
                   className='mb-4 mr-4 ml-4 p-2 border-2 border-dividerColor 
-                      rounded-md shadow-md cursor-pointer hover:border-primaryColor 
-                      hover:shadow-lg transition-all duration-200 ease-in-out 
-                      font-Roboto'
+                    rounded-md shadow-md cursor-pointer hover:border-primaryColor 
+                    hover:shadow-lg transition-all duration-200 ease-in-out 
+                    font-Roboto flex flex-col justify-between'
                   href='/topproduct'
                 >
                   <div className='flex justify-center'>
                     <img src={data.img} className='rounded-lg' />
                   </div>
                   <div className='text-center mt-4 text-sm'>{data.name}</div>
+                  <div className='text-center mt-2 text-xs text-secondaryTextColor'>
+                    Monthly Sales {data.sales}
+                  </div>
+                  <div className='h-[2px] bg-dividerColor mt-4 mb-4' />
+                  <div className='flex justify-end items-center'>
+                    <div
+                      className='text-white text-sm bg-primaryColor px-4 py-1 tracking-wide
+                      rounded-full text-Roboto border-2 border-primaryColor hover:bg-primaryBgColor 
+                      hover:text-primaryColor transition-all duration-100 ease-in-out'
+                    >
+                      Buy
+                    </div>
+                  </div>
                 </a>
               );
             })}
@@ -338,7 +352,7 @@ function AppBody() {
                   <div className='flex justify-center'>
                     <img src={data.img} className='rounded-lg' />
                   </div>
-                  <div className='text-center mt-2 text-base '>
+                  <div className='text-center mt-2 text-sm '>
                     {data.productTitle}
                   </div>
                   <div className='flex justify-between mt-4'>
@@ -347,6 +361,23 @@ function AppBody() {
                     </div>
                     <div className='text-xs text-secondaryTextColor self-center'>
                       {data.numberOfSold} sold
+                    </div>
+                  </div>
+                  <div className='h-[2px] bg-dividerColor mt-2 mb-2' />
+                  <div className='flex justify-between items-center'>
+                    <Tooltip title='Add to Cart' placement='top' arrow>
+                      <IconButton>
+                        <ShoppingCart
+                          sx={{color: "#000", cursor: "pointer", height: 18}}
+                        />
+                      </IconButton>
+                    </Tooltip>
+                    <div
+                      className='text-white text-sm bg-primaryColor px-4 py-1 tracking-wide
+                      rounded-full text-Roboto border-2 border-primaryColor hover:bg-primaryBgColor 
+                      hover:text-primaryColor transition-all duration-100 ease-in-out'
+                    >
+                      Buy
                     </div>
                   </div>
                 </a>
